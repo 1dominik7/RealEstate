@@ -1,0 +1,192 @@
+@import "../../responsive.scss";
+
+.card {
+  display: flex;
+  gap: 20px;
+
+  @include md {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .imageContainer {
+    flex: 2;
+    height: 200px;
+
+    @include sm {
+      flex: 3;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+
+      @include md {
+        height: 300px;
+      }
+    }
+  }
+
+  .textContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include sm {
+      flex: 2;
+      justify-content: unset;
+      gap: 15px;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #444;
+      transition: all 0.4s ease;
+
+      &:hover {
+        color: black;
+        scale: 1.01;
+      }
+    }
+
+    .address {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #888;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 300;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgba(254, 205, 81, 0.438);
+      width: max-content;
+    }
+
+    .promotedDate {
+      font-size: 20px;
+      font-weight: 300;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgba(254, 205, 81, 0.438);
+      width: max-content;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      @include sm {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .features {
+        height: 30px;
+        align-self: flex-end;
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+
+        @include sm {
+          align-self: center;
+        }
+
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          background-color: whitesmoke;
+          padding: 5px;
+          border-radius: 5px;
+        }
+      }
+
+      .propertyOption {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        @include sm {
+          flex-direction: row;
+        }
+
+        .edit {
+          font-weight: 600;
+          border-bottom: 1px solid lightgray;
+          cursor: pointer;
+        }
+
+        .promote {
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+          border-bottom: 1px solid lightgray;
+          cursor: pointer;
+        }
+
+        .finish {
+          font-weight: 600;
+          border-bottom: 1px solid lightgray;
+          cursor: pointer;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 20px;
+
+        .icon {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #999;
+          padding: 2px 5px;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: lightgray;
+          }
+        }
+      }
+    }
+  }
+}
+
+.animationContainer {
+  .dummyTitleView {
+    height: 60;
+    width: 350;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 20 10;
+    margin-left: 20;
+    border-radius: 5;
+  }
+  .dummyAudioView {
+    height: 100;
+    width: 350;
+    margin: 10;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 20;
+    margin-right: 15;
+    border-radius: 5;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../responsive.scss";
+
+.animatedContainerSingleP {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include sm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .animatedSection {
+    width: 45%;
+
+    @include sm {
+      width: 80%;
+    }
+  }
+
+}

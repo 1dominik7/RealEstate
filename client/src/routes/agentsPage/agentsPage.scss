@@ -1,0 +1,51 @@
+@import "../../responsive.scss";
+
+.agentsPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+  overflow: scroll;
+
+  h1{
+
+    @include sm {
+      font-size: 20px;
+    }
+  }
+
+  .details {
+    flex: 3;
+    padding-bottom: 50px;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include md {
+        padding-right: 0;
+      }
+
+      .agent {
+        height: 200px;
+        display: flex;
+        border: 1px solid rgba(211, 211, 211, 0.288);
+        border-radius: 2px;
+        padding: 10px;
+        cursor: pointer;
+
+        @include sm {
+          height: auto
+        }
+
+      }
+    }
+  }
+}

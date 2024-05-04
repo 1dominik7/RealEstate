@@ -1,0 +1,45 @@
+@import "../../responsive.scss";
+
+.failedContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+    padding: 50px 0;
+    align-items: center;
+
+    @include sm{
+        gap: 20px
+      }
+
+    .lottie{
+        width: 200px;
+        height: 200px;
+    }
+
+    h1{
+
+        @include sm{
+            font-size: 20px;
+          }
+    }
+
+    .button{
+        padding: 10px 40px;
+        background-color: rgb(254, 205, 81);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 5px solid transparent;
+
+        &:hover{
+            border: 5px solid rgb(254, 205, 81);
+            background-color: white;
+            color: rgb(254, 205, 81);
+        }
+    }
+
+}

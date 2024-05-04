@@ -1,0 +1,79 @@
+.inputContainer {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  overflow-y: scroll;
+  border: solid 1px lightgray;
+  background-color: white;
+  border-radius: 2px;
+
+  .wrapperInput {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+
+    span{
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .selected {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .itemSelected {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        .selectedInput {
+            width: 15px;
+            height: 15px;
+          }
+
+          span {
+            font-size: 16px;
+            font-weight: 600;
+          }
+      }
+    }
+
+    .desc {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .selectedItems {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 15px;
+
+      .selectedItem {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        input {
+          width: 15px;
+          height: 15px;
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        &:hover {
+          color: rgb(107, 106, 106);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@import "../../responsive.scss";
+
+.contactPageContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+
+    .top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .button{
+            padding: 10px 20px;
+            background-color: rgb(95, 197, 95);
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    }
+
+    .formContainer{
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        border: solid 1px lightgray;
+        background-color: rgb(250, 250, 250);
+
+        @include md {
+            flex-direction: column;
+            gap: 50px;
+          }
+
+        .form{
+            width: 55%;
+
+            @include md {
+                width: 100%;
+              }
+
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .formBox{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    select{
+                        height: 40px;
+                        font-size: 16px;
+                        background-color: white;
+                        border: solid 1px lightgray;
+                        border-radius: 2px;
+                        padding: 0px 10px;
+                    }
+
+                    input{
+                        height: 40px;
+                        font-size: 16px;
+                        padding-left: 10px;
+                        border-radius: 2px;
+                        border: solid 1px lightgray;
+                    }
+
+                    textarea{
+                        padding: 10px;
+                        font-size: 20px;
+                    }
+                }
+
+                .errorBox{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    padding: 5px;
+                    font-size: 10px;
+                    font-weight: 600;
+                    color: red;
+                    background-color: rgb(253, 168, 168);
+                    border: 1px solid red;
+                    border-radius: 5px;
+                }
+
+                button{
+                    height: 40px;
+                    background-color: gray;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .contactInfo{
+            width: 30%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: solid 1px lightgray;
+            align-items: center;
+            text-align: center;
+            padding: 30px 25px;
+            font-size: 12px;
+            
+            @include md {
+                width: 100%;
+              }
+
+            .green{
+                color: green;
+                font-weight: 600;
+            }
+
+            .details{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    }
+}

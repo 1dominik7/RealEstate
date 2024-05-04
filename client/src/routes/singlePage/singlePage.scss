@@ -1,0 +1,302 @@
+@import "../../responsive.scss";
+
+.singlePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    height: 100%;
+    overflow-y: scroll;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 20px;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+
+      @include sm {
+        padding-right: 0;
+      }
+
+      .info {
+        margin-top: 50px;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+
+          @include sm {
+            flex-direction: column;
+          }
+
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+              font-weight: 400;
+            }
+
+            .desc {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              .address {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                counter-reset: #888;
+                font-size: 14px;
+
+                img {
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+              .price {
+                padding: 5px;
+                background-color: rgba(254, 205, 81, 0.438);
+                border-radius: 5px;
+                width: max-content;
+                font-size: 20px;
+                font-weight: 300;
+              }
+              .bottom {
+                color: #555;
+                line-height: 20px;
+
+                @include sm {
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+          .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 0px 50px;
+            border-radius: 10px;
+            background-color: rgba(254, 205, 81, 0.209);
+            font-weight: 600;
+
+            @include sm {
+              padding: 10px 0px;
+            }
+
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .currentUserOptions {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        gap: 15px;
+
+        @include sm {
+          margin-top: 10px;
+          gap: 0;
+          justify-content: space-around;
+        }
+
+        .edit {
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover{
+            color: lightgray;
+          }
+        }
+
+        .promote {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          span {
+            font-size: 16px;
+            font-weight: 600;
+
+            &:hover{
+              color: lightgray;
+            }
+          }
+        }
+
+        .finish {
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover{
+            color: lightgray;
+          }
+        }
+      }
+    }
+  }
+
+  .features {
+    flex: 2;
+    background-color: #fcf5f3;
+    height: 100%;
+    overflow-y: scroll;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+      border-radius: 10px;
+    }
+
+    .wrapper {
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+
+      @include md {
+        padding: 20px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          background-color: rgba(254, 205, 81, 0.209);
+        }
+
+        .featureText {
+          span {
+            font-weight: bold;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .listHorizontal {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .sizes {
+        display: flex;
+        justify-content: space-between;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        .size {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: white;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 200px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          background-color: white;
+          border: 10px solid #fece51;
+          border-radius: 5px;
+          cursor: pointer;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      .popupChat {
+        position: absolute;
+        height: 500px;
+        width: auto;
+        bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        left: 0;
+
+        border-radius: 10px;
+        z-index: 99999;
+        background-color: #f7c14bdc;
+      }
+
+      .cross {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 36px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

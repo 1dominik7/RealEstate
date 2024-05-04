@@ -1,0 +1,15 @@
+@import "../responsive.scss";
+
+.animatedContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include sm {
+    flex-direction: column;
+  }
+
+  .animatedSection {
+    width: 80%;
+  }
+}

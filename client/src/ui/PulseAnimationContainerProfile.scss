@@ -1,0 +1,10 @@
+@import "../responsive.scss";
+
+.animatedContainer {
+  display: flex;
+  gap: 20px;
+
+  .animatedSection {
+    width: 80%;
+  }
+}
