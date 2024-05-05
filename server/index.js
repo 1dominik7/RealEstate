@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import path from "path";
 import cookieParser from "cookie-parser";
 import postRoute from "./routes/post.js";
 import authRoute from "./routes/auth.js";
@@ -12,8 +11,6 @@ import messageRoute from "./routes/message.js";
 import stripeRoute from "./routes/stripe.js";
 import { Server } from "socket.io";
 import "dotenv/config";
-
-const __dirname = path.resolve();
 
 const app = express();
 const server = http.createServer(app);
@@ -34,12 +31,6 @@ app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/stripe", stripeRoute);
-
-// app.use(express.static(path.join(__dirname, "/client/dist")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-// });
 
 let onlineUser = [];
 
