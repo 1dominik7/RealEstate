@@ -22,6 +22,7 @@ const io = new Server(server, {
 
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 app.use(cookieParser());
 
 app.use("/api/posts", postRoute);
@@ -31,6 +32,8 @@ app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/stripe", stripeRoute);
+
+const PORT = process.env.PORT || 8800
 
 app.get('/favicon.ico', (req, res) => res.status(204));
 
@@ -68,4 +71,4 @@ io.on("connection", (socket) => {
 
 io.listen("4000");
 
-app.listen(8800, () => [console.log("Server is running!")]);
+app.listen(PORT, () => [console.log("Server is running!")]);
