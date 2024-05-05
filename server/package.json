@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "server": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "prisma generate",
+    "build": "npx prisma generate && npm run build"
   },
   "keywords": [],
   "author": "",
