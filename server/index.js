@@ -32,6 +32,8 @@ app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/stripe", stripeRoute);
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 let onlineUser = [];
 
 const addUser = (userId, socketId) => {
