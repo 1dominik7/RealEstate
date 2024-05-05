@@ -49,7 +49,7 @@ const PromotedOffers = () => {
       <div className="wrapper">
         <h1>Promoted offers</h1>
         <div className="offersContainer">
-          {data?.slice(0, number).map((item) => (
+          {data?.slice(0, number)?.map((item) => (
             <Link key={item.id} to={`/${item.id}`} className="offerContainer">
               <img src={item?.images[0] || "/pet.png"} alt="" />
               <div className="offerDetails">

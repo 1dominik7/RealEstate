@@ -7,7 +7,7 @@
   "scripts": {
     "server": "nodemon index.js",
     "start": "node index.js",
-    "postinstall": "npm run generate"
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
