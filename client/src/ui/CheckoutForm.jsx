@@ -58,7 +58,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:5173/successPromotion",
+        return_url: `${import.meta.env.VITE_STRIPE_CLIENT_URL}/successPromotion`,
       },
     });
 

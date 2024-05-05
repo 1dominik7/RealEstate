@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
 import cookieParser from "cookie-parser";
 import postRoute from "./routes/post.js";
 import authRoute from "./routes/auth.js";
@@ -12,19 +13,19 @@ import stripeRoute from "./routes/stripe.js";
 import { Server } from "socket.io";
 import "dotenv/config";
 
+const __dirname = path.resolve();
+
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors: {
-      origin: "http://localhost:5173",
-    },
-  });
-
+  cors: {
+    origin: process.env.CLIENT_URL,
+  },
+});
 
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
-
 
 app.use("/api/posts", postRoute);
 app.use("/api/auth", authRoute);
@@ -34,6 +35,11 @@ app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/stripe", stripeRoute);
 
+// app.use(express.static(path.join(__dirname, "/client/dist")));
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 let onlineUser = [];
 
@@ -53,21 +59,20 @@ const getUser = (userId) => {
 };
 
 io.on("connection", (socket) => {
-    socket.on("newUser", (userId) => {
-      addUser(userId, socket.id);
-    });
-    
-    socket.on("sendMessage", ({ receiverId, data }) => {
-      const receiver = getUser(receiverId);
-      io.to(receiver?.socketId).emit("getMessage", data);
-    });
-  
-    socket.on("disconnect", () => {
-      removeUser(socket.id);
-    });
+  socket.on("newUser", (userId) => {
+    addUser(userId, socket.id);
   });
-  
-  io.listen("4000");
 
+  socket.on("sendMessage", ({ receiverId, data }) => {
+    const receiver = getUser(receiverId);
+    io.to(receiver?.socketId).emit("getMessage", data);
+  });
+
+  socket.on("disconnect", () => {
+    removeUser(socket.id);
+  });
+});
+
+io.listen("4000");
 
 app.listen(8800, () => [console.log("Server is running!")]);

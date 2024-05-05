@@ -42,7 +42,7 @@ const PromotePage = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:8800/api/stripe/create-checkout-session`, {
+      const res = await fetch(`${import.meta.env.VITE_STRIPE_URL}/stripe/create-checkout-session`, {
         method:"POST",
         headers:headers,
         body:JSON.stringify(body)
