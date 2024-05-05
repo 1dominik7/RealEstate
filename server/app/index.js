@@ -1,14 +1,14 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import postRoute from "./routes/post.js";
-import authRoute from "./routes/auth.js";
-import testRoute from "./routes/test.js";
-import userRoute from "./routes/user.js";
-import chatRoute from "./routes/chat.js";
+import postRoute from "../routes/post.js";
+import authRoute from "../routes/auth.js";
+import testRoute from "../routes/test.js";
+import userRoute from "../routes/user.js";
+import chatRoute from "../routes/chat.js";
 import http from "http";
-import messageRoute from "./routes/message.js";
-import stripeRoute from "./routes/stripe.js";
+import messageRoute from "../routes/message.js";
+import stripeRoute from "../routes/stripe.js";
 import { Server } from "socket.io";
 import "dotenv/config";
 
