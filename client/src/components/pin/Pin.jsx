@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./pin.scss";
 import { Marker, Popup } from "react-leaflet";
 import { Link } from "react-router-dom";
+import "leaflet/dist/leaflet.css";
 
 const Pin = ({ item }) => {
 
