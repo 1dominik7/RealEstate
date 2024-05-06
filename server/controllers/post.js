@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export const getPosts = async (req, res) => {
   const query = req.query;
-  const city = query.city.split(",");
+  const city = query?.city.split(",");
 
   try {
     if (query.city.length === 0) {
